@@ -5,7 +5,7 @@ var cities = JSON.parse(localStorage.getItem("city"));
 var localdata;
 let weather = {
 
-    apiKey: "YOUR APİ KEY",
+    apiKey: "YOUR APİ KEY HERE",
     fetchWeather: function (city) {
         fetch(
             "http://api.openweathermap.org/data/2.5/weather?q=" +
