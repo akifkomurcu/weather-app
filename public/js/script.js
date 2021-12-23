@@ -1,11 +1,11 @@
 var cdata = [];
 var dataobject = {};
 
-var cities = JSON.parse(localStorage.getItem("city"));
+
 var localdata;
 let weather = {
 
-    apiKey: "YOUR APİ KEY HERE",
+    apiKey: "fbbeb384c3f8686b0e90648e6c408cbe",
     fetchWeather: function (city) {
         fetch(
             "http://api.openweathermap.org/data/2.5/weather?q=" +
@@ -27,8 +27,8 @@ let weather = {
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
-        if (data.name == undefined || null)
-            localdata = cities[0].cityvalue;
+
+
         // console.log(data.name);
         document.querySelector(".city").innerText = name + " Hava durumu:";
         document.querySelector(".icon").src = "https://openweathermap.org/img/wn/" + icon + ".png";
@@ -44,11 +44,12 @@ let weather = {
     },
     search: function () {
         this.fetchWeather(document.querySelector(".search-bar").value);
-
         var cityvalue = document.querySelector(".search-bar").value;
         dataobject["cityvalue"] = cityvalue;
         cdata.push(dataobject);
         localStorage.setItem("city", JSON.stringify(cdata));
+        var cities = JSON.parse(localStorage.getItem("city"));
+        localdata = cities[0].cityvalue;
 
     },
 };
@@ -62,7 +63,7 @@ document.querySelector(".search-bar").addEventListener("keyup", function (event)
         weather.search();
     }
 });
-if (localdata != undefined || null)
+if (localdata)
     weather.fetchWeather(localdata);
 else
     weather.fetchWeather("sivas");
