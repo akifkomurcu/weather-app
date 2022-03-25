@@ -1,7 +1,7 @@
-# basic weather app
-this app is a basic weather app uses api from openweather.
+# Basic Weather App
+This app is a basic weather app uses api from openweather.
 
-using localstorage to being effective
+Using localstorage to being effective
 
 ## Try to my Weather app from this adress!
 
