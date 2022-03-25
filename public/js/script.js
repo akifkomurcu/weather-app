@@ -5,7 +5,7 @@ var dataobject = {};
 var localdata;
 let weather = {
 
-    apiKey: "fbbeb384c3f8686b0e90648e6c408cbe",
+    apiKey: "8df07a441f89112aa7a6a9028ee5d9ef",
     fetchWeather: function (city) {
         fetch(
             "http://api.openweathermap.org/data/2.5/weather?q=" +
